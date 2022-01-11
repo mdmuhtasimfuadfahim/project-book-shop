@@ -223,12 +223,10 @@
               </a>
               <!--Price--->
               <div class="price-buy">
-                  <span class="p-price"><%= books.price %> </span>
-                  <% if(user) { %>
+                  <span class="p-price">৳ <%= books.price %> </span>
+                  
                       <button data-books="<%= JSON.stringify(books) %>" class="add-to-cart btn">Add to cart</button>
-                  <% } else { %>
-                      <button id="#cart-btn"><a href="/registration" class="p-buy-btn">Do registration</a></button> 
-                  <% } %>
+                  
               </div>
           </div>
 
@@ -587,7 +585,7 @@
               <h3><%= books.bookName %></h3>
 
               <p><%= books.authorName %></p>
-              <div class="price"><%= books.price %> <span style="text-decoration: line-through;"><%= books.description %></span></div>
+              <div class="price">৳ <%= books.price %> <span style="text-decoration: line-through;">৳ <%= books.description %></span></div>
               <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -609,7 +607,7 @@
             <h3><%= books.bookName %></h3>
 
             <p><%= books.authorName %></p>
-              <div class="price"><%= books.price %> <span style="text-decoration: line-through;"><%= books.description %></span></div>
+              <div class="price">৳ <%= books.price %> <span style="text-decoration: line-through;">৳ <%= books.description %></span></div>
               <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -631,7 +629,7 @@
             <h3><%= books.bookName %></h3>
 
             <p><%= books.authorName %></p>
-              <div class="price"><%= books.price %><span style="text-decoration: line-through;"><%= books.description %></span></div>
+              <div class="price">৳ <%= books.price %><span style="text-decoration: line-through;">৳ <%= books.description %></span></div>
               <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -652,7 +650,7 @@
           <div class="content">
               <h3><%= books.bookName %></h3>
               <p><%= books.authorName %></p>
-              <div class="price"><%= books.price %> <span style="text-decoration: line-through;"><%= books.description %> </span></div>
+              <div class="price">৳ <%= books.price %> <span style="text-decoration: line-through;">৳ <%= books.description %> </span></div>
               <div class="stars">
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -723,7 +721,7 @@
               </div>
               <div class="content">
                   <h3><%= books.bookName %></h3>
-                  <div class="price"><%= books.price %><span><%= books.description %></span></div>
+                  <div class="price">৳ <%= books.price %><span>৳ <%= books.description %></span></div>
                   <button data-books="<%= JSON.stringify(books) %>" class="btn add-to-cart" id="btn3"> add to cart </button>
               </div>
           </div>
@@ -912,5 +910,7 @@
 </section>
 
 <!-- blogs section ends -->
+<script src="/socket.io/socket.io.js"></script>
+
 
 <%- include('./customerview/footer.ejs')%>

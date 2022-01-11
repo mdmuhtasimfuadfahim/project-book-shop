@@ -24,8 +24,15 @@ function adminController(){
             res.render('adminview/home')
         },
         async customerOrders(req, res){
-            const orders = await Orders.find();
-            res.render('adminview/orders')
+            Orders.find({ status: { $ne: 'confirmed' } }, null, { sort: { 'createdAt': -1 }}).populate('customerId', '-password').exec((err, orders)=>{
+                if(req.xhr){
+                    console.log(orders)
+                    return res.json(orders)
+                }else{
+                    return res.render('adminview/orders')
+                }
+
+            })
         },
         async viewUsers(req, res){
             const users = await Users.find()
@@ -95,6 +102,15 @@ function adminController(){
         },
         addUserPage(req, res){
             res.render('adminview/addUserForm')
+        },
+        updateStatus(req, res){
+            Orders.updateOne({ _id: req.body.orderId}, { status: req.body.status }, (err, data)=>{
+                if(err){
+                    console.log(err)
+                    return res.redirect('/admin/customer-orders')
+                }
+                return res.redirect('/admin/customer-orders')
+            })
         }
     }
 }

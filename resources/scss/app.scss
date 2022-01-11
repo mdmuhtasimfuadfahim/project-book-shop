@@ -1,16 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
-
+@import'~noty/src/noty.scss';
+@import'~noty/src/themes/mint.scss';
 @import './variables';
 *{
     font-family: 'Poppins', sans-serif;
     margin:0; padding:0;
     box-sizing: border-box;
-    outline: none; border:none;
+    outline: none; 
+    // border:none;
     text-decoration: none;
     text-transform: capitalize;
     transition:all .2s linear;
     transition: width none;
     
+}
+
+/*---------------------
+noty notification style
+----------------------*/ 
+.noty_theme__mint{
+  border-radius: 0.5rem!important;
+  padding-left: 8px!important;
+  background: $green!important;
+  color: $light-color!important;
+  font-size: 16px!important;
 }
 
 #myBtn{
@@ -90,7 +103,7 @@ html::-webkit-scrollbar-track{
 }
 
 html::-webkit-scrollbar-thumb{
-    background:var($black);
+    background:$black;
 }
 
 section{
@@ -118,9 +131,9 @@ section{
 .heading span{
     font-size: 3rem;
     padding:.5rem 2rem;
-    color:var($black);
+    color:$black;
     background: #fff;
-    border:var($border);
+    border:$border;
 }
 
 .banner{
@@ -204,7 +217,7 @@ section{
 }
 
 .btn:hover{
-    background:var($dark-color);
+    background:$dark-color;
 }
 
 .header .header-1{
@@ -218,7 +231,7 @@ section{
 .header .header-1 .logo{
     font-size: 2.5rem;
     font-weight: bolder;
-    color:var($black);
+    color:$black;
 }
 
 .header .header-1 .logo{
@@ -243,18 +256,18 @@ section{
     height:100%;
     width:100%;
     text-transform: none;
-    color:var($black);
+    color:$black;
 }
 
 .header .header-1 .search-form label{
     font-size: 2.5rem;
     padding-right: 1.5rem;
-    color:var($black);
+    color:$black;
     cursor: pointer;
 }
 
 .header .header-1 .search-form label:hover{
-    color:var($green);
+    color:$green;
 }
 
 .item-numb{
@@ -268,14 +281,14 @@ section{
 .header .header-1 .icons a{
     font-size: 2.5rem;
     margin-left: 1.5rem;
-    color:var($black);
+    color:$black;
     cursor: pointer;
     
 }
 
 .header .header-1 .icons div:hover,
 .header .header-1 .icons a:hover{
-    color:var($green);
+    color:$green;
     transform: rotate(360deg);
    
 }
@@ -327,7 +340,7 @@ section{
 }
 
 .bottom-navbar a:hover{
-    background:var($dark-color);
+    background:$dark-color;
 }
 
 #alignment{
@@ -366,7 +379,7 @@ section{
     border: 2px solid black;
     width:40rem;
     padding:2rem;
-    box-shadow: var($box-shadow);
+    box-shadow: $box-shadow;
     border-radius: .5rem;
     margin:2rem;
 }
@@ -374,7 +387,7 @@ section{
 .login-form-container form h3{
     font-size: 2.5rem;
     text-transform: uppercase;
-    color:var($black);
+    color:$black;
     text-align: center;
 }
 
@@ -388,10 +401,10 @@ section{
     width: 100%;
     margin:.7rem 0;
     font-size: 1.6rem;
-    border:var($border);
+    border:$border;
     border-radius: .5rem;
     padding:1rem 1.2rem;
-    color:var($black);
+    color:$black;
     text-transform: none;
 }
 
@@ -404,7 +417,7 @@ section{
 
 .login-form-container form .checkbox label{
     font-size: 1.5rem;
-    color:var($light-color);
+    color:$light-color;
     cursor: pointer;
 }
 
@@ -416,7 +429,7 @@ section{
 
 .login-form-container form p{
     padding-top: .8rem;
-    color:var($light-color);
+    color:$light-color;
     font-size: 1.5rem;
 }
 
@@ -429,7 +442,7 @@ section{
     position: absolute;
     top:1.5rem; right:2.5rem;
     font-size: 5rem;
-    color:var($black);
+    color:$black;
     cursor: pointer;
 }
 
@@ -465,12 +478,12 @@ section{
 }
 
 .home .row .content h3{
-    color:var($black);
+    color:$black;
     font-size: 4.5rem;
 }
 
 .home .row .content p{
-    color:var($light-color);
+    color:$light-color;
     font-size: 1.4rem;
     line-height: 2;
     padding:1rem 0;
@@ -502,13 +515,13 @@ section{
 
 .icons-container .icons h3{
     font-size: 2.2rem;
-    color:var($black);
+    color:$black;
     padding-bottom: .5rem;
 }
 
 .icons-container .icons p{
     font-size: 1.4rem;
-    color:var($light-color);
+    color:$light-color;
 }
 
 
@@ -524,7 +537,7 @@ section{
 }
 
 .featured .featured-slider .box:hover{
-    border:var($border-hover);
+    border:$border-hover;
 }
 
 .featured .featured-slider .box .image{
@@ -541,7 +554,7 @@ section{
 }
 
 .featured .featured-slider .box .icons{
-    border-bottom: var($border-hover);
+    border-bottom: $border-hover;
     position: absolute;
     top:0; left:0; right: 0;
     background: #fff;
@@ -554,13 +567,13 @@ section{
 }
 
 .featured .featured-slider .box .icons a{
-    color:var($black);
+    color:$black;
     font-size: 2.2rem;
     padding:1.3rem 1.5rem;
 }
 
 .featured .featured-slider .box .icons a:hover{
-    background:var($green);
+    background:$green;
     color:#fff;
 }
 
@@ -572,18 +585,18 @@ section{
 
 .featured .featured-slider .box .content h3{
     font-size: 2rem;
-    color:var($black);
+    color:$black;
 }
 
 .featured .featured-slider .box .content .price{
     font-size: 2.2rem;
-    color:var($black);
+    color:$black;
     padding-top: 1rem;
 }
 
 .featured .featured-slider .box .content .price span{
     font-size: 1.5rem;
-    color:var($light-color);
+    color:$light-color;
     text-decoration: line-through;
 }
 
@@ -632,8 +645,8 @@ section{
     border-radius: .5rem;
     background-image: url(/img/banner-bg.jpg) ;
     
-    box-shadow: var($box-shadow);
-    outline: var($outline);
+    box-shadow: $box-shadow;
+    outline: $outline;
     outline-offset: -1rem;
     text-align: center;
 }
@@ -645,10 +658,10 @@ section{
 
 .swiper-button-next,
 .swiper-button-prev{
-    border:var($border-hover);
+    border:$border-hover;
     height:4rem;
     width:4rem;
-    color:var($black);
+    color:$black;
     background: #fff;
 }
 
@@ -659,7 +672,7 @@ section{
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover{
-    background: var($black);
+    background: $black;
     color:#fff;
 }
 
@@ -689,7 +702,7 @@ section{
     margin: .7rem 0;
     padding:1rem 1.2rem;
     font-size: 1.6rem;
-    color:var($black);
+    color:$black;
     border-radius: .5rem;
     text-transform: none;
     background-image: url(/img/pexels-photo-4210789.jpeg);
@@ -721,24 +734,24 @@ section{
 
 .arrivals .arrivals-slider .box .content h3{
     font-size: 2rem;
-    color:var($black);
+    color:$black;
 }
 
 .arrivals .arrivals-slider .box .content .price{
     font-size: 2.2rem;
-    color:var($black);
+    color:$black;
     padding-bottom: .5rem;
 }
 
 .arrivals .arrivals-slider .box .content .price span{
     font-size: 1.5rem;
-    color:var($light-color);
+    color:$light-color;
     text-decoration: line-through;
 }
 
 .arrivals .arrivals-slider .box .content .stars i{
     font-size: 1.5rem;
-    color:var($green);
+    color:$green;
 }
 
 .gallery{
@@ -843,25 +856,25 @@ section{
 }
 
 .deal .content h3{
-    color:var($green);
+    color:$green;
     font-size: 2.5rem;
     padding-bottom: .5rem;
 }
 
 .deal .content h1{
-    color:var($black);
+    color:$black;
     font-size: 4rem;
 }
 
 .deal .content p{
     padding:1rem 0;
-    color:var($light-color);
+    color:$light-color;
     font-size: 1.4rem;
     line-height: 2;
 }
 
 .reviews .reviews-slider .box{
-    border:var($border);
+    border:$border;
     padding:2rem;
     text-align: center;
     margin:2rem 0;
@@ -870,7 +883,7 @@ section{
 }
 
 .reviews .reviews-slider .box:hover{
-    border:var($border-hover);
+    border:$border-hover;
 }
 
 .reviews .reviews-slider .box img{
@@ -899,7 +912,7 @@ section{
 
 .reviews .reviews-slider .box .stars i{
     font-size: 1.7rem;
-    color:var($green);
+    color:$green;
 }
 
 .blogs .blogs-slider .box{
@@ -911,7 +924,7 @@ section{
 }
 
 .blogs .blogs-slider .box:hover{
-    border:var($border-hover);
+    border:$border-hover;
    
 }
 
@@ -926,7 +939,7 @@ section{
     justify-content: space-between;
     padding-bottom: 1.5rem;
     margin-bottom: 1rem;
-    border-bottom: var($border);
+    border-bottom: $border;
 }
 
 .blogs .content .icons a{
@@ -935,7 +948,7 @@ section{
 }
 
 .blogs .content .icons a:hover{
-    color:var($black);
+    color:$black;
 }
 
 .blogs .content .icons a i{
@@ -959,12 +972,12 @@ section{
 
 .blogs .blogs-slider .box .content h3{
     font-size: 2.2rem;
-    color:var($black);
+    color:$black;
 }
 
 .blogs .blogs-slider .box .content p{
     font-size: 1.4rem;
-    color:var($light-color);
+    color:$light-color;
     padding:1rem 0;
     line-height: 2;
 }
@@ -973,31 +986,33 @@ section{
 
     background-color: rgb(137, 206, 252);
     width: 100%;
+    height: 500px;
 
 }
 
 .footer .box-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap:1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap:.8rem;
     
 }
 
 .footer .box-container .box h3{
     font-size: 2.2rem;
-    color:var($black);
-    padding:1rem 0;
+    // color:$black;
+    // padding:1rem 0;
+    margin-bottom: 53px;
 }
 
 .footer .box-container .box a{
     display: block;
     font-size: 1.4rem;
-    color:var($light-color);
+    color:$light-color;
     padding:1rem 0;
 }
 
 .footer .box-container .box a i{
-    color:var($green);
+    color:$green;
     padding-right: .5rem;
 }
 
@@ -1016,24 +1031,28 @@ section{
     height: 50px;
     background-color: rgb(243, 55, 55);
     bottom: 40px;
-    right: 50px;
+    right: 30px;
 
+    justify-content: center;
     text-decoration: none;
     
 }
 
 #top{
 
-    position: fixed;
+    position: absolute;
     color: white;
-    padding: 5px 15px;
+    justify-content: center;
+    padding: 1px -6px;
     font-size: 20px;
     text-align: center;
 }
 
 .footer .share{
-    padding:1rem 0;
+    // padding: 10rem 0;
+    padding-top: 25rem;
     text-align: center;
+
 }
 
 .footer .share a{
@@ -1048,21 +1067,21 @@ section{
 }
 
 .footer .share a:hover{
-    background:var($black);
+    background:$black;
 }
 
 .footer .credit{
-    border-top: var($border);
+    border-top: $border;
     margin-top: 2rem;
     padding:0 1rem;
     padding-top: 2.5rem;
     font-size: 2rem;
-    color:var($light-color);
+    color:$light-color;
     text-align: center;
 }
 
 .footer .credit span{
-    color:var($green);
+    color:$green;
 }
 
 .loader-container{
@@ -1198,7 +1217,7 @@ section{
     }
 
     .header .header-1{
-        box-shadow: var($box-shadow);
+        box-shadow: $box-shadow;
         position: relative;
     }
 
@@ -1206,7 +1225,7 @@ section{
         position:absolute;
         top:-115%; right:2rem;
         width: 90%;
-        box-shadow: var($box-shadow);
+        box-shadow: $box-shadow;
     }
 
     .header .header-1 .search-form.active{
@@ -2466,7 +2485,7 @@ select{
 }
 
 .form-style-1 input[type=file]{
-  background: url(../../public/img/banner-bg.jpg) no-repeat;
+  background: url(/img/banner-bg.jpg) no-repeat;
 }
 .form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
 	background: #4691A4;
@@ -2479,5 +2498,37 @@ select{
 } 
 .add-book-page{
   margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+/*----------
+cart section
+----------*/
+.cart-item-name{
+  font-size: 19px;
+  color: $green;
+  line-height: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.cart-item {
+  font-size: 19px;
+  color: rgb(10, 10, 29);
+  margin-bottom: 10px;
+}
+
+.cart-order{
+  font-size: 20px;
+  color: $black;
+  font-weight: bold;
+}
+
+.text-green{
+  font-size: 17px;
+  color:$green;
+  // font-style: bold;
+  font-weight: bold;
   margin-bottom: 10px;
 }

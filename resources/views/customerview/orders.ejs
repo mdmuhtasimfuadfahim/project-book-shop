@@ -10,33 +10,43 @@
             <th>Order Status</th>
             <th>Order Date</th>
             <th>Order Time</th>
+            <th>Payment Status</th>
         </tr>
         </thead>
+        <%
+        function renderOrderItems(books){
+            let parsedItems = Object.values(books)
+            return parsedItems.map((bookItem) =>{
+                return `
+                   ${ bookItem.books.bookName } - ${ bookItem.bookqty }  
+                   `
+            }).join('')
+        } 
+        %>
         <tbody>
-        <tr>
-            <td>
-                <a href=""><p class="order-id">19389184819240813740</p></a>
-                <div class="order-info"><p>Porn book - 2</p></div>
-            </td>
-            <td>Muhtasim Fuad Fahim</td>
-            <td>muhtasim.fahim.98@gmail.com</td>
-            <td>01744866688</td>
-            <td>Order Placed</td>
-            <td>10/01/2022</td>
-            <td>9:28 PM</td>
-        </tr>
-        <tr>
-            <td>
-                <a href=""><p class="order-id">19389184819240813740</p></a>
-                <div class="order-info"><p>Porn book - 2</p></div>
-            </td>
-            <td>Muhtasim Fuad Fahim</td>
-            <td>muhtasim.fahim.98@gmail.com</td>
-            <td>01744866688</td>
-            <td>Order Placed</td>
-            <td>10/01/2022</td>
-            <td>9:28 PM</td>
-        </tr>
+        <% if(orders.length) { %>
+            <% orders.forEach((order) => { %>
+            <tr>
+                <td>
+                    <a href=""><p class="order-id"><%= order._id %></p></a>
+                    <div class="order-info"><p><%= renderOrderItems(order.books) %></p></div>
+                </td>
+                <td><%= order.customerId.name %></td>
+                <td><%= order.customerId.email %></td>
+                <td><%= order.customerId.contact %></td>
+                <td><%= order.status %></td>
+                <td><%= moment(order.createdAt).format('DD/MM/YYYY') %></td>
+                <td><%= moment(order.createdAt).format('hh:mmA') %></td>
+                <td><%= order.paymentStatus ? 'Paid' : 'Not paid' %></td>
+            </tr>
+            <% }) %>
+        <% } else { %>
+            <tr>
+                <td>No Orders Found</td>
+            </tr>
+        <% } %>
         </tbody>
     </table>
 </div>
+
+<script src="/socket.io/socket.io.js"></script>

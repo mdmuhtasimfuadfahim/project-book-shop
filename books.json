@@ -5,9 +5,9 @@
     "bookName": "প্রিয়পদরেখা",
     "bookImage": "11869.png",
     "authorName": "হুমায়ূন আহমেদ",
-    "price": "৳ ১৮৮",
+    "price": "188",
     "category": "Famous Writter",
-    "description": "৳ ২৫০"
+    "description": "250"
   },{
     "_id": {
       "$oid": "6r5r8823a26a66807cf2bea8"
@@ -15,29 +15,29 @@
     "bookName": "বাদশাহ নামদার",
     "bookImage": "4105 (1).png",
     "authorName": "হুমায়ূন আহমেদ",
-    "price": "৳ ৩৬০",
+    "price": "360",
     "category": "Famous Writter",
-    "description": "৳ ৪৫০"
+    "description": "450"
   },{
     "_id": {
       "$oid": "5uy23s27a27a66807cf2bea9"
     },
     "bookName": "কালপুরুষ",
     "bookImage": "113056.png",
-    "price": "৳ ৫২০",
+    "price": "520",
     "category": "Famous Writter",
     "authorName": "সমরেশ মজুমদার",
-    "description": "৳ ৬৫০"
+    "description": "650"
   },{
     "_id": {
       "$oid": "5ert6727a27a66807cf2bea9"
     },
     "bookName": "মহাপুরুষ",
     "bookImage": "32804.png",
-    "price": "৳ ৯০",
+    "price": "90",
     "category": "Famous Writter",
     "authorName": "হুমায়ূন আহমেদ",
-    "description": "৳ ১২০"
+    "description": "120"
   },{
     "_id": {
       "$oid": "1wms6737a47a66807cf1cea9"
@@ -46,18 +46,18 @@
     "bookImage": "42752.png",
     "authorName": "সমরেশ মজুমদার",
     "category": "Famous Writter",
-    "price": "৳ ৬৪০",
-    "description": "৳ ৮০০"
+    "price": "640",
+    "description": "800"
   },{
     "_id": {
       "$oid": "5uyr2717a27a66807cf2bea9"
     },
     "bookName": "যুক্তিফাঁদে ফড়িং",
-    "price": "৳ ১৬০",
+    "price": "160",
     "bookImage": "325064.png",
     "authorName": "হুমায়ূন আহমেদ",
     "category": "Famous Writter",
-    "description": "-২০%"
+    "description": "180"
   },{
     "_id": {
       "$oid": "8y6t32rea27b66807cf2bea2"
@@ -65,9 +65,9 @@
     "bookName": "মুক্তিযুদ্ধের ইতিহাস (পেপারব্যাক)",
     "bookImage": "50625.png",
     "authorName": "মুহম্মদ জাফর ইকবাল",
-    "price": "৳ ১০০",
+    "price": "100",
     "category": "Famous Writter",
-    "description": "৳ ১২০"
+    "description": "120"
   },{
     "_id": {
       "$oid": "34t5a717a27a66807cf2bea9"
@@ -75,9 +75,9 @@
     "bookName": "আমার বন্ধু রাশেদ",
     "bookImage": "22985.png",
     "authorName": "মুহম্মদ জাফর ইকবাল",
-    "price": "৳ ২০০",
+    "price": "200",
     "category": "Famous Writter",
-    "description": "৳ ২৫০"
+    "description": "250"
   },{
     "_id": {
       "$oid": "78bg6717a27a6ert7cf2bea9"
@@ -85,9 +85,9 @@
     "bookName": "গীতবিতান",
     "bookImage": "59271.png",
     "authorName": "রবীন্দ্রনাথ ঠাকুর",
-    "price": "৳ ৪৮০",
+    "price": "480",
     "category": "Famous Writter",
-    "description": "৳ ৬০০ "
+    "description": "600"
   },{
     "_id": {
       "$oid": "23rr6717a27345807cf2bea9"
@@ -95,9 +95,9 @@
     "bookName": "সঞ্চয়িতা",
     "bookImage": "11930.png",
     "authorName": "রবীন্দ্রনাথ ঠাকুর",
-    "price": "৳ ৪৮০",
+    "price": "480",
     "category": "Famous Writter",
-    "description": "৳ ৬০০"
+    "description": "600"
   },{
     "_id": {
       "$oid": "80e36717a27aiuh23cf2bea9"
@@ -105,9 +105,9 @@
     "bookName": "গীতাঞ্জলি",
     "bookImage": "58047.png",
     "authorName": "রবীন্দ্রনাথ ঠাকুর",
-    "price": "৳ ৪৮০",
+    "price": "480",
     "category": "Famous Writter",
-    "description": "৳ ৬০০"
+    "description": "600"
   },{
     "_id": {
       "$oid": "98tg6717a27aww807cfe0987"
@@ -115,7 +115,7 @@
     "bookName": "নির্বাচিত নাটক সমগ্র",
     "bookImage": "58990.png",
     "authorName": "রবীন্দ্রনাথ ঠাকুর",
-    "price": "৳ ৩২০",
+    "price": "320",
     "category": "Famous Writter",
-    "description": "৳ ৪০০"
+    "description": "400"
   }]

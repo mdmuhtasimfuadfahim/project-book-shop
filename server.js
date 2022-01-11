@@ -7,6 +7,7 @@ const ejs = require('ejs')
 const expressLayout = require('express-ejs-layouts')
 const path = require('path')
 const morgan = require('morgan')
+const Emitter = require('events')
 
 /*----------------define port number-------------------*/ 
 const PORT = process.env.PORT || 4050
@@ -31,6 +32,10 @@ const mongoDBStore = new MongoDBStore({
     dbName: "bookShop",
     stringify: false
 })
+
+/*------------------event emitter---------------------*/
+const eventEmitter = new Emitter()
+app.set('eventEmitter', eventEmitter)
 
 /*------------------session configuration--------------*/ 
 app.use(session({
@@ -72,6 +77,23 @@ require('./routes/web')(app)
 
 
 /*--------------------run server---------------------*/ 
-app.listen(PORT, '0.0.0.0', ()=>{
+const server = app.listen(PORT, '0.0.0.0', ()=>{
     console.log(`Listening on port ${PORT}`)
+})
+
+/*---------------
+socket operation
+---------------*/
+const io = require('socket.io')(server)
+io.on('connection', (socket)=>{
+    /*-------join--------*/ 
+    // console.log(socket.id)
+    socket.on('join', (orderId)=>{
+        // console.log(orderId)
+        socket.join(orderId)
+    })
+})
+
+eventEmitter.on('orderPlaced', (data)=>{
+    io.to('adminRoom').emit('orderPlaced', data)
 })
