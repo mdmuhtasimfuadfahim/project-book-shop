@@ -1,0 +1,77 @@
+<!-- header section starts  -->
+
+<header class="header">
+
+    <div class="header-1">
+
+        <i class="fas fa-book-reader logo"><a href="/">E<span>Book</span></a></i>
+
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            <% if(user) { %>
+               <% if(user.role === "Customer") { %>
+               <form id="logout" action="/logout" method="POST">
+                  <a class="fas fa-sign-out-alt" onclick="document.getElementById('logout').submit()" href="#"></a>
+               </form>
+               <% } %>
+               <% if(user.role === "Admin") { %>
+                  <a href="/admin/dashboard" class="fas fa-chart-line"></a>
+               <% } %>
+            <% } else { %>
+               <a href="/login" class="fas fa-sign-in-alt"></a>
+               <a href="/registration" class="fas fa-user-plus"></a>
+            <% } %>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-bell"></a>
+        </div>
+
+    </div>
+
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#featured">featured</a>
+            <a href="#categories">categories</a>
+            <a href="#arrivals">arrivals</a>
+            <a href="#reviews">reviews</a>
+            <a href="#blogs">blogs</a>
+            <input type="checkbox" id="click">
+            <label id="chat" for="click">
+            <i  class="fab fa-facebook-messenger"></i>
+            <i  class="fas fa-times"></i>
+            </label>          
+
+            <div class="wrapper">
+                <div class="head-text">
+                   Let's chat? - Online
+                </div>
+                <div class="chat-box">
+                   <div class="desc-text">
+                      Please fill out the form below to start chatting
+                   </div>
+                   <form action="#">
+                      <div class="field">
+                         <input type="text" placeholder="Your Name" required>
+                      </div>
+                      <div class="field">
+                         <input type="email" placeholder="Email Address" required>
+                      </div>
+                      
+                      <div class="field">
+                        <button  onclick="myFunction()" id="button" type="submit">Start Chat</button>
+                         
+                      </div>
+                   </form>
+                </div>
+             </div>
+
+            </div>
+        </nav>
+        
+</header>
+<!-- header section ends -->

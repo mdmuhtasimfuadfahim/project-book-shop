@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "5e4e66cfa2c166807cf2bea7"
+  },
+  "bookName": "ফ্রন্টলাইন- শান্তির জন্য যুদ্ধ",
+  "bookImage": "324932.png",
+  "authorName": "unknown",
+  "price": "৳ ২২৫",
+  "category": "Featured Books",
+  "description": "-২৫%"
+},{
+  "_id": {
+    "$oid": "5e5e66eea26a66807cf2bea8"
+  },
+  "bookName": "মা (১০০তম বিশেষ মুদ্রণ)",
+  "bookImage": "324295.png",
+  "authorName": "unknown",
+  "price": "৳ ৪২০",
+  "category": "Featured Books",
+  "description": "-৩০%"
+},{
+  "_id": {
+    "$oid": "5eee6727a27a66807cf2bea9"
+  },
+  "bookName": "স্মৃতিগন্ধা",
+  "bookImage": "324902.png",
+  "price": "৳ ৪৫০",
+  "category": "Featured Books",
+  "authorName": "unknown",
+  "description": "-২৫%"
+},{
+  "_id": {
+    "$oid": "5eee6737a47a66807cf1cea9"
+  },
+  "bookName": "মহাযাত্রা",
+  "bookImage": "324473.png",
+  "authorName": "unknown",
+  "category": "Featured Books",
+  "price": "৳ ৫০৩",
+  "description": "-২৫%"
+},{
+  "_id": {
+    "$oid": "5e2e2717a27a66807cf2bea9"
+  },
+  "bookName": "যুক্তিফাঁদে ফড়িং",
+  "price": "৳ ১৬০",
+  "bookImage": "325064.png",
+  "authorName": "unknown",
+  "category": "Featured Books",
+  "description": "-২০%"
+},{
+  "_id": {
+    "$oid": "5eae3717a27b66807cf2bea2"
+  },
+  "bookName": "বিলিয়ন ডলার স্টার্টআপ",
+  "bookImage": "325067.png",
+  "authorName": "unknown",
+  "price": "৳ ২৪০",
+  "category": "Featured Books",
+  "description": "-২০%"
+},{
+  "_id": {
+    "$oid": "5ee5a717a27a66807cf2bea9"
+  },
+  "bookName": "চেষ্টার জিমনেসিয়াম ফিউচার",
+  "bookImage": "325158.png",
+  "authorName": "unknown",
+  "price": "৳ ১৯২",
+  "category": "Featured Books",
+  "description": "-২০%"
+},{
+  "_id": {
+    "$oid": "56ee6717a27a66807cf2bea9"
+  },
+  "bookName": "কুরআনের সাথে হৃদয়ের কথা",
+  "bookImage": "317054.png",
+  "authorName": "unknown",
+  "price": "৳ ১৯৫",
+  "category": "Featured Books",
+  "description": "-২৫%"
+}]

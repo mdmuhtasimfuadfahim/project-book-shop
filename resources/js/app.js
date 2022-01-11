@@ -1,0 +1,242 @@
+import axios from 'axios';
+import Noty from 'noty';
+
+
+let addToCart = document.querySelectorAll('.add-to-cart')
+let cartCounter = document.querySelector('#top2')
+
+function updateCart(books){
+  axios.post('/update-cart', books).then(res =>{
+    console.log(res)
+    cartCounter.innerText = res.data.totalBooks
+    new Noty({
+      type: 'success',
+      timeout: 1000,
+      text: 'A Book Added to Cart',
+      processBar: false
+    }).show();
+  }).catch(err =>{
+    new Noty({
+      type: 'error',
+      timeout: 1000,
+      text: 'Something went wrong',
+      processBar: false
+    }).show();
+  })
+}
+
+addToCart.forEach((btn)=>{
+  if(!addToCart){
+    return;
+  }
+  btn.addEventListener('click', (e)=>{
+    let books = JSON.parse(btn.dataset.books)
+    updateCart(books)
+  })
+})
+
+var searchForm = document.querySelector('.search-form');
+
+if(searchForm){
+  document.querySelector('#search-btn').onclick = () =>{
+    searchForm.classList.toggle('active');
+  }
+  
+}
+
+// let loginForm = document.querySelector('.login-form-container');
+
+// document.querySelector('#login-btn').onclick = () =>{
+//   loginForm.classList.toggle('active');
+// }
+
+// document.querySelector('#close-login-btn').onclick = () =>{
+//   loginForm.classList.remove('active');
+// }
+
+window.onscroll = () =>{
+
+  searchForm.classList.remove('active');
+
+  if(window.scrollY > 80){
+    document.querySelector('.header .header-2').classList.add('active');
+  }else{
+    document.querySelector('.header .header-2').classList.remove('active');
+  }
+
+}
+
+window.onload = () =>{
+
+  if(window.scrollY > 80){
+    document.querySelector('.header .header-2').classList.add('active');
+  }else{
+    document.querySelector('.header .header-2').classList.remove('active');
+  }
+
+  fadeOut();
+
+}
+
+function loader(){
+  document.querySelector('.loader-container').classList.add('active');
+}
+
+function fadeOut(){
+  setTimeout(loader, 2000);
+}
+
+var swiper = new Swiper(".books-slider", {
+  loop:true,
+  centeredSlides: true,
+  autoplay: {
+    delay: 4500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
+
+var swiper = new Swiper(".featured-slider", {
+  spaceBetween: 10,
+  loop:true,
+  centeredSlides: true,
+  autoplay: {
+    delay: 9500,
+    disableOnInteraction: false,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    450: {
+      slidesPerView: 2,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    1024: {
+      slidesPerView: 4,
+    },
+  },
+});
+
+var swiper = new Swiper(".arrivals-slider", {
+  spaceBetween: 10,
+  loop:true,
+  centeredSlides: true,
+  autoplay: {
+    delay: 5500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
+
+
+
+
+var swiper = new Swiper(".blogs-slider", {
+  spaceBetween: 10,
+  grabCursor:true,
+  loop:true,
+  centeredSlides: true,
+  autoplay: {
+    delay: 9500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
+
+
+
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+if(btn){
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  
+}
+// When the user clicks on <span> (x), close the modal
+if(span){
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
+
+
+
+
+
+
+// document.querySelector("#btn1").addEventListener("click",function myfunction(){
+
+//   alert("Added on the cart");
+// });
+
+// document.querySelector("#btn2").addEventListener("click",function myfunction(){
+
+//   alert("Added on the cart");
+// });
+
+// document.querySelector("#btn3").addEventListener("click",function myfunction(){
+
+//   alert("Added on the cart");
+// });
+
+// document.querySelector("#btn4").addEventListener("click",function myfunction(){
+
+//   alert("Added on the cart");
+// });
+
+

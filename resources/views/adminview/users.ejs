@@ -1,0 +1,25 @@
+<%- include('./dashboard.ejs') %>
+
+
+<div id="main">
+<%- include('./head.ejs') %>
+
+  <div class="row">
+    <% users.forEach(function(users) { %>
+      <% if(users.role === "Customer") { %>
+    <div class="column">
+      <div class="card">
+        <img src="<%= users.image %>" alt="Profile picture" style="width:100%">
+        <div class="user-container">
+          <h2><%= users.name %></h2>
+          <p class="title"><span><%= users.role %></span></p>
+          <p><%= users.contact %></p>
+          <p><%= users.email %></p>
+          <button class="submit-btn">Contact</button>
+        </div>
+      </div>
+    </div>
+     <% } %>
+    <% }) %>
+  </div>
+</div>

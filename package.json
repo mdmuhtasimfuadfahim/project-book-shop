@@ -1,0 +1,42 @@
+{
+  "name": "Project-Book-Shop",
+  "version": "1.0.0",
+  "description": "These are the web apps for a book stall",
+  "main": "index.js",
+  "author": "muhtasim.0x",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "serve": "node server.js",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "bcrypt": "^5.0.1",
+    "connect-mongo": "4.4.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "events": "^3.3.0",
+    "express": "^4.17.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.2",
+    "moment": "^2.29.1",
+    "mongoose": "5.13.7",
+    "morgan": "^1.10.0",
+    "multer": "1.4.2",
+    "noty": "^3.2.0-beta-deprecated",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "laravel-mix": "^6.0.39",
+    "nodemon": "^2.0.15",
+    "resolve-url-loader": "4.0.0",
+    "sass": "^1.45.2",
+    "sass-loader": "12.1.0"
+  }
+}

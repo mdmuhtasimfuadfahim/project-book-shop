@@ -1,0 +1,121 @@
+[{
+    "_id": {
+      "$oid": "5e4e66cfa2c1wer07cf09876"
+    },
+    "bookName": "প্রিয়পদরেখা",
+    "bookImage": "11869.png",
+    "authorName": "হুমায়ূন আহমেদ",
+    "price": "৳ ১৮৮",
+    "category": "Famous Writter",
+    "description": "৳ ২৫০"
+  },{
+    "_id": {
+      "$oid": "6r5r8823a26a66807cf2bea8"
+    },
+    "bookName": "বাদশাহ নামদার",
+    "bookImage": "4105 (1).png",
+    "authorName": "হুমায়ূন আহমেদ",
+    "price": "৳ ৩৬০",
+    "category": "Famous Writter",
+    "description": "৳ ৪৫০"
+  },{
+    "_id": {
+      "$oid": "5uy23s27a27a66807cf2bea9"
+    },
+    "bookName": "কালপুরুষ",
+    "bookImage": "113056.png",
+    "price": "৳ ৫২০",
+    "category": "Famous Writter",
+    "authorName": "সমরেশ মজুমদার",
+    "description": "৳ ৬৫০"
+  },{
+    "_id": {
+      "$oid": "5ert6727a27a66807cf2bea9"
+    },
+    "bookName": "মহাপুরুষ",
+    "bookImage": "32804.png",
+    "price": "৳ ৯০",
+    "category": "Famous Writter",
+    "authorName": "হুমায়ূন আহমেদ",
+    "description": "৳ ১২০"
+  },{
+    "_id": {
+      "$oid": "1wms6737a47a66807cf1cea9"
+    },
+    "bookName": "সাতকাহন (অখণ্ড) (হার্ডকভার)",
+    "bookImage": "42752.png",
+    "authorName": "সমরেশ মজুমদার",
+    "category": "Famous Writter",
+    "price": "৳ ৬৪০",
+    "description": "৳ ৮০০"
+  },{
+    "_id": {
+      "$oid": "5uyr2717a27a66807cf2bea9"
+    },
+    "bookName": "যুক্তিফাঁদে ফড়িং",
+    "price": "৳ ১৬০",
+    "bookImage": "325064.png",
+    "authorName": "হুমায়ূন আহমেদ",
+    "category": "Famous Writter",
+    "description": "-২০%"
+  },{
+    "_id": {
+      "$oid": "8y6t32rea27b66807cf2bea2"
+    },
+    "bookName": "মুক্তিযুদ্ধের ইতিহাস (পেপারব্যাক)",
+    "bookImage": "50625.png",
+    "authorName": "মুহম্মদ জাফর ইকবাল",
+    "price": "৳ ১০০",
+    "category": "Famous Writter",
+    "description": "৳ ১২০"
+  },{
+    "_id": {
+      "$oid": "34t5a717a27a66807cf2bea9"
+    },
+    "bookName": "আমার বন্ধু রাশেদ",
+    "bookImage": "22985.png",
+    "authorName": "মুহম্মদ জাফর ইকবাল",
+    "price": "৳ ২০০",
+    "category": "Famous Writter",
+    "description": "৳ ২৫০"
+  },{
+    "_id": {
+      "$oid": "78bg6717a27a6ert7cf2bea9"
+    },
+    "bookName": "গীতবিতান",
+    "bookImage": "59271.png",
+    "authorName": "রবীন্দ্রনাথ ঠাকুর",
+    "price": "৳ ৪৮০",
+    "category": "Famous Writter",
+    "description": "৳ ৬০০ "
+  },{
+    "_id": {
+      "$oid": "23rr6717a27345807cf2bea9"
+    },
+    "bookName": "সঞ্চয়িতা",
+    "bookImage": "11930.png",
+    "authorName": "রবীন্দ্রনাথ ঠাকুর",
+    "price": "৳ ৪৮০",
+    "category": "Famous Writter",
+    "description": "৳ ৬০০"
+  },{
+    "_id": {
+      "$oid": "80e36717a27aiuh23cf2bea9"
+    },
+    "bookName": "গীতাঞ্জলি",
+    "bookImage": "58047.png",
+    "authorName": "রবীন্দ্রনাথ ঠাকুর",
+    "price": "৳ ৪৮০",
+    "category": "Famous Writter",
+    "description": "৳ ৬০০"
+  },{
+    "_id": {
+      "$oid": "98tg6717a27aww807cfe0987"
+    },
+    "bookName": "নির্বাচিত নাটক সমগ্র",
+    "bookImage": "58990.png",
+    "authorName": "রবীন্দ্রনাথ ঠাকুর",
+    "price": "৳ ৩২০",
+    "category": "Famous Writter",
+    "description": "৳ ৪০০"
+  }]

@@ -1,0 +1,46 @@
+<%- include('./dashboard.ejs') %>
+
+<div id="main">
+    <%- include('./head.ejs') %>
+
+    <% if(messages.error){ %>
+        <span style="color: red;"><%= messages.error %></span> 
+    <% } else { %>
+        <span style="color: green;"><%= messages.success %></span> 
+    <% } %>
+
+    <form action="/admin/add-books" method="POST" enctype="multipart/form-data">
+        <ul class="form-style-1">
+            <li>
+                <label>Book Name with Title <span class="required">*</span></label>
+                <input type="text" name="bookName" value="<%= messages.bookName %>" class="field-divided" placeholder="মহাযাত্রা" />     
+            </li>
+            <li>
+                <label>Upload Font Page Image <span class="required">*</span></label>
+                <input type="file" name="bookImage" value="<%= messages.bookImage %>" class="field-long" />     
+            </li>
+            <li>
+                <label>Author Name<span class="required">*</span></label>
+                <input type="text" name="authorName" value="<%= messages.authorName %>" class="field-long" placeholder="সমরেশ মজুমদার"/>
+            </li>
+            <li>
+                <label>Category: <span class="required">*</span></label>
+                    <select name="category" class="field-select">
+                        <option value="Featured">Featured</option>
+                        <option value="Famous Writter">Famous Writter</option>
+                        <option value="Pre Order">Pre Order</option>
+                    </select>
+            </li>
+            <li>
+                <label>Price</label>
+                <input name="price" value="<%= messages.price %>" id="field5" class="field-long field-textarea" placeholder="৳ ১৬০"></input>
+            </li>
+            <li>
+                <label>Description / Summary</label>
+                <input name="description" value="<%= messages.description %>" id="field5" class="field-long field-textarea" placeholder="write the description about book here"></input>
+            </li>
+
+            <button class="submit-btn add-book-page" type="submit">Upload Book Info</button>
+        </ul>
+    </form>
+</div>
