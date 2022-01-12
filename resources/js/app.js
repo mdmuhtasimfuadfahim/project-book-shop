@@ -1,42 +1,10 @@
-import axios from 'axios';
-import Noty from 'noty';
+import { initAddToOrder } from './addToCart';
 import { initStripe } from './stripe';
 import { initAdmin } from './admin';
 
 
-let addToCart = document.querySelectorAll('.add-to-cart')
-let cartCounter = document.querySelector('#top2')
-
-function updateCart(books){
-  axios.post('/update-cart', books).then(res =>{
-    console.log(res)
-    cartCounter.innerText = res.data.totalBooks
-    new Noty({
-      type: 'success',
-      timeout: 1000,
-      text: 'A Book Added to Cart',
-      processBar: false
-    }).show();
-  }).catch(err =>{
-    new Noty({
-      type: 'error',
-      timeout: 1000,
-      text: 'Something went wrong',
-      processBar: false
-    }).show();
-  })
-}
-
-addToCart.forEach((btn)=>{
-  if(!addToCart){
-    return;
-  }
-  btn.addEventListener('click', (e)=>{
-    let books = JSON.parse(btn.dataset.books)
-    updateCart(books)
-  })
-})
-
+/*---------add to cart operation file--------*/ 
+initAddToOrder()
 
 /*---------socket operation (real time)--------*/ 
 let socket = io()

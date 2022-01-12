@@ -1,0 +1,34 @@
+<%- include('./dashboard.ejs') %>
+<div id="main" class="admin-view-page">
+    <%- include('./head.ejs') %>
+    <table>
+        <thead>
+        <tr>
+            <th>Book Image</th>
+            <th>Book Name</th>
+            <th>Author Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Uploaded Date</th>
+            <th>Uploaded Time</th>
+        </tr>
+        </thead>
+        <tbody> 
+        <% books.forEach(function(books) { %>
+            <tr>
+                <td><img style="border-radius: 10px;" height="30px" width="70px" src="/img/<%= books.bookImage %>" alt=""></td>
+                <td><%= books.bookName %></td>
+                <td><%= books.authorName %></td>
+                <td><%= books.price %></td>
+                <td><%= books.category %></td>
+                <td><%= books.description %></td>
+                <td><%= moment(books.createdAt).format('DD/MM/YYYY') %></td>
+                <td><%= moment(books.createdAt).format('hh:mmA') %></td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>

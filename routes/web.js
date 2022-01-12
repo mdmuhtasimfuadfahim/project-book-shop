@@ -28,6 +28,10 @@ function initRoutes(app){
     app.get('/admin/add-books-form', admin, adminController().addBookForm)
     app.post('/admin/order/status', adminController().updateStatus)
     app.post('/admin/add-books', adminController().addBook)
+    app.get('/admin/add-blogs-form', admin, adminController().addBlogForm)
+    app.get('/admin/view-all-books', admin, adminController().viewAllBooks)
+    app.get('/admin/view-all-blogs', admin, adminController().viewAllBlogs)
+    app.post('/admin/add-blogs', adminController().addBlog)
 
     /*------admin routes-----*/ 
     app.post('/orders', customerController().orderedBooks)

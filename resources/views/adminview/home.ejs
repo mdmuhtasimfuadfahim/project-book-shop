@@ -12,21 +12,33 @@
         
         <div class="col-div-3">
             <div  class="box">
-                <p>0<br/><span>customer</span></p>
+              <% if(users.length) { %>   
+                <p><%= users.length - 1 %><br/><span>Customers</span></p>
+              <% } else { %>
+                <p>0<br/><span>Customer</span></p>
+              <% } %>
                 <i class="fa fa-users box-icon"></i>
             </div>
         </div>
     
         <div class="col-div-3">
             <div class="box">
-                <p>0<br/><span>user</span></p>
+              <% if(users.length) { %>   
+                <p><%= users.length %><br/><span>Users</span></p>
+              <% } else { %>
+                <p>0<br/><span>User</span></p>
+              <% } %>
                 <i class="fa fa-user box-icon"></i>
             </div>
         </div>
     
         <div class="col-div-3">
             <div class="box">
-                <p>0<br/><span>Orders</span></p>
+              <% if(orders.length) { %>   
+                <p><%= orders.length %><br/><span>Orders</span></p>
+              <% } else { %>
+                <p>0<br/><span>Order</span></p>
+              <% } %>
                 <i class="fa fa-shopping-bag box-icon"></i>
             </div>
         </div>
@@ -49,14 +61,18 @@
     
           <div class="col-div-6">
             <div class="box">
-              <a href="blogpost.html" tagret="_blank"> <p>0<br/><span>Blog post</span> </a>
+              <a href="#" tagret="_blank"> <p>0<br/><span>Blog post</span> </a>
             </div>
               <i class="fa fa-tasks box-icon"></i>
             </div>
     
             <div class="col-div-6">
                 <div class="box">
-                  <p>0<br/><span>Add new Book</span></p>
+                  <% if(books.length) { %>   
+                    <p><%= books.length %><br/><span>Total Books</span></p>
+                  <% } else { %>
+                    <p>0<br/><span>Total Book</span></p>
+                  <% } %>
                   <i class="fa fa-tasks box-icon"></i>
                 </div>
       </div>

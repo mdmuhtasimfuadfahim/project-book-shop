@@ -2302,6 +2302,61 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/addToCart.js":
+/*!***********************************!*\
+  !*** ./resources/js/addToCart.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "initAddToOrder": () => (/* binding */ initAddToOrder)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var noty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
+/* harmony import */ var noty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(noty__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function initAddToOrder() {
+  var addToCart = document.querySelectorAll('.add-to-cart');
+  var cartCounter = document.querySelector('#top2');
+
+  function updateCart(books) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().post('/update-cart', books).then(function (res) {
+      // console.log(res)
+      cartCounter.innerText = res.data.totalBooks;
+      new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
+        type: 'success',
+        timeout: 1000,
+        text: 'A book added to cart',
+        progressBar: false
+      }).show();
+    })["catch"](function (err) {
+      new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
+        type: 'error',
+        timeout: 1000,
+        text: 'Something went wrong',
+        progressBar: false
+      }).show();
+    });
+  }
+
+  addToCart.forEach(function (btn) {
+    if (!addToCart) {
+      return;
+    }
+
+    btn.addEventListener('click', function (e) {
+      var books = JSON.parse(btn.dataset.books);
+      updateCart(books);
+    });
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/admin.js":
 /*!*******************************!*\
   !*** ./resources/js/admin.js ***!
@@ -2421,49 +2476,15 @@ function placeOrder(formObject) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var noty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! noty */ "./node_modules/noty/lib/noty.js");
-/* harmony import */ var noty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(noty__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _stripe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./stripe */ "./resources/js/stripe.js");
-/* harmony import */ var _admin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./admin */ "./resources/js/admin.js");
+/* harmony import */ var _addToCart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addToCart */ "./resources/js/addToCart.js");
+/* harmony import */ var _stripe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stripe */ "./resources/js/stripe.js");
+/* harmony import */ var _admin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin */ "./resources/js/admin.js");
 
 
 
+/*---------add to cart operation file--------*/
 
-var addToCart = document.querySelectorAll('.add-to-cart');
-var cartCounter = document.querySelector('#top2');
-
-function updateCart(books) {
-  axios__WEBPACK_IMPORTED_MODULE_0___default().post('/update-cart', books).then(function (res) {
-    console.log(res);
-    cartCounter.innerText = res.data.totalBooks;
-    new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
-      type: 'success',
-      timeout: 1000,
-      text: 'A Book Added to Cart',
-      processBar: false
-    }).show();
-  })["catch"](function (err) {
-    new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
-      type: 'error',
-      timeout: 1000,
-      text: 'Something went wrong',
-      processBar: false
-    }).show();
-  });
-}
-
-addToCart.forEach(function (btn) {
-  if (!addToCart) {
-    return;
-  }
-
-  btn.addEventListener('click', function (e) {
-    var books = JSON.parse(btn.dataset.books);
-    updateCart(books);
-  });
-});
+(0,_addToCart__WEBPACK_IMPORTED_MODULE_0__.initAddToOrder)();
 /*---------socket operation (real time)--------*/
 
 var socket = io();
@@ -2471,13 +2492,13 @@ var adminAreaPath = window.location.pathname;
 
 if (adminAreaPath.includes('admin')) {
   /*----------call admin.js file-------------*/
-  (0,_admin__WEBPACK_IMPORTED_MODULE_3__.initAdmin)(socket);
+  (0,_admin__WEBPACK_IMPORTED_MODULE_2__.initAdmin)(socket);
   socket.emit('join', 'adminRoom');
 }
 /*---------order place information----------*/
 
 
-(0,_stripe__WEBPACK_IMPORTED_MODULE_2__.initStripe)();
+(0,_stripe__WEBPACK_IMPORTED_MODULE_1__.initStripe)();
 /*----------remove order success alert---------*/
 
 var alertMsg = document.querySelector('#success-alert');

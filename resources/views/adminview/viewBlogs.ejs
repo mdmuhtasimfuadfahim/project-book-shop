@@ -1,0 +1,30 @@
+<%- include('./dashboard.ejs') %>
+<div id="main" class="admin-view-page">
+    <%- include('./head.ejs') %>
+    <table>
+        <thead>
+        <tr>
+            <th>Book Image</th>
+            <th>Book Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Uploaded Date</th>
+            <th>Uploaded Time</th>
+        </tr>
+        </thead>
+        <tbody> 
+        <% blogs.forEach(function(blogs) { %>
+            <tr>
+                <td><img style="border-radius: 10px;" height="50px" width="80px" src="/img/<%= blogs.bookImage %>" alt=""></td>
+                <td><%= blogs.bookName %></td>
+                <td><%= blogs.price %></td>
+                <td><%= blogs.description %></td>
+                <td><%= moment(blogs.createdAt).format('DD/MM/YYYY') %></td>
+                <td><%= moment(blogs.createdAt).format('hh:mmA') %></td>
+            </tr>
+        <% }) %>
+        </tbody>
+    </table>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>

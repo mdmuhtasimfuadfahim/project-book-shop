@@ -3,3 +3,6 @@ node_modules/
 database credentials.txt
 yarn.lock
 yarn-error.log
+blogs.json
+orders.json
+users.json

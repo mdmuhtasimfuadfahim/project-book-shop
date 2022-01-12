@@ -827,81 +827,22 @@
   <div class="swiper blogs-slider">
 
       <div class="swiper-wrapper">
-
+        <% blogs.forEach(function(blogs) { %>
           <div class="swiper-slide box">
               <div class="image">
-                  <img style="height: 100px; width: 100%;" src="/img/240_F_442262808_cEeNmY0CBj278TyyeyiNHh9WN8gcYzL7.jpg" alt="">
+                  <img style="height: 100px; width: 100%;" src="/img/<%= blogs.bookImage %>" alt="">
               </div>
               <div class="content">
                   <div class="icons">
                       <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                      <a href="#"> <i class="fas fa-calendar"></i> 1st dec, 2021 </a>
+                      <a href="#"> <i class="fas fa-calendar"></i> <%= moment(blogs.date).format('MMMM Do YYYY') %> </a>
                   </div>
-                  <h3>আয়তনয়না</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
+                  <h3><%= blogs.bookName %></h3>
+                  <p class="row-limit"><%= blogs.description %></p>
                   <a href="#" class="btn">read more</a>
               </div>
           </div>
-
-          <div class="swiper-slide box">
-              <div class="image">
-                  <img style="height: 100px; width: 100%;" src="/img/240_F_443417160_S5iv8MemJqRuHM1sI2wP2zIiqLP9kIvJ.jpg" alt="">
-              </div>
-              <div class="content">
-                  <div class="icons">
-                      <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                      <a href="#"> <i class="fas fa-calendar"></i> 1st dec, 2021 </a>
-                  </div>
-                  <h3>তুষার কণ্যা</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
-                  <a href="#" class="btn">read more</a>
-              </div>
-          </div>
-
-          <div class="swiper-slide box">
-              <div class="image">
-                  <img style="height: 100px; width: 100%;" src="/img/240_F_445542149_dOMYc1ABkVVSOz9VgZJEVscjf3vGwceH.jpg" alt="">
-              </div>
-              <div class="content">
-                  <div class="icons">
-                      <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                      <a href="#"> <i class="fas fa-calendar"></i> 1st dec, 2021 </a>
-                  </div>
-                  <h3>আয়নাঘর</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
-                  <a href="#" class="btn">read more</a>
-              </div>
-          </div>
-
-          <div class="swiper-slide box">
-              <div class="image">
-                  <img style="height: 100px; width: 100%;" src="/img/240_F_442617514_Dm9CwYmp5XJkr2jHXjPSvmnAG5ZltNPj.jpg" alt="">
-              </div>
-              <div class="content">
-                  <div class="icons">
-                      <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                      <a href="#"> <i class="fas fa-calendar"></i> 1st dec, 2021 </a>
-                  </div>
-                  <h3>চিরায়ত নারী</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
-                  <a href="#" class="btn">read more</a>
-              </div>
-          </div>
-
-          <div class="swiper-slide box">
-              <div class="image">
-                  <img style="height: 100px; width: 100%;" src="/img/240_F_443562228_zHRsaaSeHqkDfcKD47GaRwVqrEobT0lR.jpg" alt="">
-              </div>
-              <div class="content">
-                  <div class="icons">
-                      <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                      <a href="#"> <i class="fas fa-calendar"></i> 1st dec, 2021 </a>
-                  </div>
-                  <h3>একটি মাছের আত্মকাহিনী</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, odio.</p>
-                  <a href="#" class="btn">read more</a>
-              </div>
-          </div>
+        <% }) %>
 
       </div>
 
