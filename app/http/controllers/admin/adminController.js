@@ -90,7 +90,7 @@ function adminController(){
                 /*---------store book information into database--------*/
                 const books = new Books({
                     bookName: bookName,
-                    bookImage: '/img/' + req.file.filename,
+                    bookImage: req.file.filename,
                     authorName: authorName,
                     category: category,
                     description: description,
@@ -163,7 +163,7 @@ function adminController(){
                 /*---------store blogs information into database--------*/
                 const blogs = new Blogs({
                     bookName: bookName,
-                    bookImage: '/img/' + req.file.filename,
+                    bookImage: req.file.filename,
                     description: description,
                     price: price,
                     date: date
