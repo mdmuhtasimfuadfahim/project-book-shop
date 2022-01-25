@@ -946,7 +946,7 @@ section {
 }
 
 .newsletter {
-  background: url(/img/pexels-photo-3772620.jpeg) no-repeat;
+  background: url(/img/mypic.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -2797,9 +2797,14 @@ users slider
 /*------------
 Add Books Form 
 ------------*/
-.main .form-style-1 {
+#main .form-style-1 {
   overflow-x: auto;
   overflow-y: auto;
+}
+
+.alignment {
+  margin: auto;
+  justify-content: center;
 }
 
 .form-style-1 {
@@ -2874,7 +2879,7 @@ select {
 }
 
 .form-style-1 input, .form-style-1 select {
-  background: #023441;
+  background: #eceff0;
   padding: 15px 15px 15px 15px;
   border: none;
   color: black;

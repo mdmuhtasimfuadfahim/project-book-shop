@@ -20,10 +20,11 @@ function initRoutes(app){
     app.post('/logout', auth, authController().logout)
     
 
-    /*------admin routes-----*/ 
+    /*------admin APIs-----*/ 
     app.get('/admin/dashboard', admin, adminController().dashboard)
     app.get('/admin/users-view', admin, adminController().viewUsers)
     app.get('/admin/customer-orders', admin, adminController().customerOrders)
+    app.get('/admin/customer-completed-orders', admin, adminController().customerCompletedOrders)
     app.get('/admin/add-user-page', adminController().addUserPage)
     app.get('/admin/add-books-form', admin, adminController().addBookForm)
     app.post('/admin/order/status', adminController().updateStatus)
@@ -33,7 +34,7 @@ function initRoutes(app){
     app.get('/admin/view-all-blogs', admin, adminController().viewAllBlogs)
     app.post('/admin/add-blogs', adminController().addBlog)
 
-    /*------admin routes-----*/ 
+    /*------cusstomer APIs-----*/ 
     app.post('/orders', customerController().orderedBooks)
     app.get('/customer/orders', customerController().ordersPage)
     app.post('/update-cart', cartController().updateCart)

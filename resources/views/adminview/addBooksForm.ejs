@@ -2,14 +2,14 @@
 
 <div id="main">
     <%- include('./head.ejs') %>
-
+    <div class="container">
     <% if(messages.error){ %>
         <span style="color: red;"><%= messages.error %></span> 
     <% } else { %>
         <span style="color: green;"><%= messages.success %></span> 
     <% } %>
 
-    <form action="/admin/add-books" method="POST" enctype="multipart/form-data">
+    <form class="alignment" action="/admin/add-books" method="POST" enctype="multipart/form-data">
         <ul class="form-style-1">
             <li>
                 <label>Book Name with Title <span class="required">*</span></label>
@@ -43,6 +43,7 @@
             <button class="submit-btn add-book-page" type="submit">Upload Book Info</button>
         </ul>
     </form>
+</div>
 </div>
 
 <script src="/socket.io/socket.io.js"></script>

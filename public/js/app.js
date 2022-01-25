@@ -2750,7 +2750,7 @@ function _initStripe() {
             };
 
             _context.next = 3;
-            return (0,_stripe_stripe_js__WEBPACK_IMPORTED_MODULE_2__.loadStripe)('pk_test_51I7QKQBbq8Eqac2sUcKFGJdMED1jcRStgYhp4jYso99gSVOD169E5z6jbi41szCLE7A8w0KzZAfTFBcxkn9pzDju00fv8dmSOs');
+            return (0,_stripe_stripe_js__WEBPACK_IMPORTED_MODULE_2__.loadStripe)('pk_test_51KK534DpidT1SQPmVmy0eGzQTff3mhrsd44UMk7dgn8LsmckQ2Tuv0EOReTO79YnXgd6gRGdRyFISn7m1b0gUp9D00RebOVMOu');
 
           case 3:
             stripe = _context.sent;

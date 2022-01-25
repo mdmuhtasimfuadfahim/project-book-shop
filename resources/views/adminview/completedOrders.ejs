@@ -1,0 +1,37 @@
+<%- include('./dashboard.ejs') %>
+<div id="main" class="admin-order-page order-page">
+    <%- include('./head.ejs') %>
+    <table>
+        <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Order Status</th>
+            <th>Order Date</th>
+            <th>Order Time</th>
+        </tr>
+        </thead>
+
+        <tbody> 
+            <% orders.forEach(function(orders) { %>
+            <tr>
+                <td>
+                    <a href=""><p class="order-id"><%= orders._id %></p></a>
+                </td>
+                <td><%= orders.customerId.name %></td>
+                <td><%= orders.customerId.email %></td>
+                <td><%= orders.contact %></td>
+                <td>
+                    <%= orders.status %>
+                </td>
+                <td><%= moment(orders.createdAt).format('DD/MM/YYYY') %></td>
+                <td><%= moment(orders.createdAt).format('hh:mmA') %></td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>

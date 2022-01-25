@@ -38,6 +38,11 @@ function adminController(){
 
             })
         },
+        async customerCompletedOrders(req, res){
+            const orders = await Orders.find({ status: 'confirmed' }, null, { sort: { 'createdAt': -1 }}).populate('customerId', '-password')
+            console.log(orders)
+            return res.render('adminview/completedOrders', {orders: orders, moment: moment})
+        },
         async viewUsers(req, res){
             const users = await Users.find()
             res.render('adminview/users', {users: users, moment: moment})
