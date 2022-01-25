@@ -151,7 +151,6 @@ function adminController(){
                     if(result){
                         req.flash('error', 'This book name exits in database')
                         req.flash('bookName', bookName)
-                        req.flash('authorName', authorName)
                         req.flash('category', category)
                         req.flash('description', description)
                         req.flash('price', price)
