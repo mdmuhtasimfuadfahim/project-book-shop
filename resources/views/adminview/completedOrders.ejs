@@ -15,6 +15,7 @@
         </thead>
 
         <tbody> 
+        <% if(orders.length) { %>
             <% orders.forEach(function(orders) { %>
             <tr>
                 <td>
@@ -30,6 +31,11 @@
                 <td><%= moment(orders.createdAt).format('hh:mmA') %></td>
             </tr>
             <% }) %>
+        <% } else { %>
+                <tr>
+                    <td>No Orders Found</td>
+                </tr>
+        <% } %>
         </tbody>
     </table>
 </div>

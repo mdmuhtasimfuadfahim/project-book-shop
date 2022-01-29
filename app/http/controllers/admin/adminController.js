@@ -30,7 +30,7 @@ function adminController(){
         async customerOrders(req, res){
             Orders.find({ status: { $ne: 'confirmed' } }, null, { sort: { 'createdAt': -1 }}).populate('customerId', '-password').exec((err, orders)=>{
                 if(req.xhr){
-                    // console.log(orders)
+                    console.log(orders)
                     return res.json(orders)
                 }else{
                     return res.render('adminview/orders')
@@ -39,7 +39,7 @@ function adminController(){
             })
         },
         async customerCompletedOrders(req, res){
-            const orders = await Orders.find({ status: 'confirmed' }, null, { sort: { 'createdAt': -1 }}).populate('customerId', '-password')
+            const orders = await Orders.find({ status: { $ne: 'order_placed' }}, null, { sort: { 'createdAt': -1 }}).populate('customerId', '-password')
             console.log(orders)
             return res.render('adminview/completedOrders', {orders: orders, moment: moment})
         },
