@@ -5,21 +5,25 @@
 <%- include('./head.ejs') %>
 
   <div class="row">
-    <% users.forEach(function(users) { %>
-      <% if(users.role === "Customer") { %>
+    
+    <% for(var i = 0; i < users.length; i++) { %>
     <div class="column">
+
       <div class="card">
-        <img src="<%= users.image %>" alt="Profile picture" style="width:100%">
+        <a class="btn delete" data-id2="<%= users[i]._id %>">
+          <span class="text-gradient"><i class="fas fa-times"></i></span>
+       </a>
+        <img src="<%= users[i].image %>" alt="Profile picture" style="width:100%">
         <div class="user-container">
-          <h2><%= users.name %></h2>
-          <p class="title"><span><%= users.role %></span></p>
-          <p><%= users.contact %></p>
-          <p><%= users.email %></p>
-          <button class="submit-btn">Contact</button>
+          <h5><%= i+1%></h5>
+          <h2><%= users[i].name %></h2>
+          <p class="title"><span><%= users[i].role %></span></p>
+          <p><%= users[i].contact %></p>
+          <p><%= users[i].email %></p>
+            <button class="submit-btn">Contact</button>
         </div>
       </div>
     </div>
-     <% } %>
-    <% }) %>
+    <% } %>
   </div>
 </div>

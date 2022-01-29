@@ -45,7 +45,22 @@ function adminController(){
         },
         async viewUsers(req, res){
             const users = await Users.find()
+            console.log(users)
             res.render('adminview/users', {users: users, moment: moment})
+        },
+        deleteUser(req, res){
+            const id = req.params.id
+
+            Users.findByIdAndDelete(id).then(users =>{
+                if(!users){
+                    res.status(404).send({ message: `Cannot delete the user with ID: ${id}. MaybeID is not correct`})
+                }
+                else{
+                    res.send({ message: 'User info deleted successfully'})
+                }
+            }).catch(err =>{
+                res.status(500).send({ message: `Cound not delete this user info with this ID: ${id}}`})
+            })
         },
         addBookForm(req, res){
             res.render('adminview/addBooksForm')

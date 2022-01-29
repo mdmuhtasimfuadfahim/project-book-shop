@@ -2344,11 +2344,12 @@ only screen and (max-width: 760px),
 /*----------
 users slider 
 ----------*/ 
-.row .column {
+#main .row .column {
   float: left;
   width: 33.3%;
   margin-bottom: 16px;
   padding: 0 8px;
+  gap: 1.5rem;
 }
 
 /* Display the columns below each other instead of side by side on small screens */
@@ -2360,13 +2361,13 @@ users slider
 }
 
 /* Add some shadows to create a card effect */
-.card {
+#main .row .column .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.row .column .card img{
-  height: 250px;
-  width: 50px;
+#main .row .column .card img{
+  height: 200px;
+  width: 45px;
 }
 
 /* Some left and right padding inside the container */

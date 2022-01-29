@@ -23,6 +23,7 @@ function initRoutes(app){
     /*------admin APIs-----*/ 
     app.get('/admin/dashboard', admin, adminController().dashboard)
     app.get('/admin/users-view', admin, adminController().viewUsers)
+    app.delete('/admin/delete-user/:id', adminController().deleteUser)
     app.get('/admin/customer-orders', admin, adminController().customerOrders)
     app.get('/admin/customer-completed-orders', admin, adminController().customerCompletedOrders)
     app.get('/admin/add-user-page', adminController().addUserPage)

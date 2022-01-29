@@ -1,6 +1,7 @@
 import { initAddToOrder } from './addToCart';
 import { initStripe } from './stripe';
 import { initAdmin } from './admin';
+import { deleteUser } from './deleteUser';
 
 
 /*---------add to cart operation file--------*/ 
@@ -28,6 +29,9 @@ if(alertMsg){
     alertMsg.remove()
   }, 2000)
 }
+
+/*--------delete user file------------*/
+deleteUser() 
 
 var searchForm = document.querySelector('.search-form');
 

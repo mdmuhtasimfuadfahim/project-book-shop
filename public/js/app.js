@@ -2479,6 +2479,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _addToCart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addToCart */ "./resources/js/addToCart.js");
 /* harmony import */ var _stripe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stripe */ "./resources/js/stripe.js");
 /* harmony import */ var _admin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin */ "./resources/js/admin.js");
+/* harmony import */ var _deleteUser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./deleteUser */ "./resources/js/deleteUser.js");
+
 
 
 
@@ -2508,7 +2510,10 @@ if (alertMsg) {
     alertMsg.remove();
   }, 2000);
 }
+/*--------delete user file------------*/
 
+
+(0,_deleteUser__WEBPACK_IMPORTED_MODULE_3__.deleteUser)();
 var searchForm = document.querySelector('.search-form');
 
 if (searchForm) {
@@ -2675,6 +2680,39 @@ window.onclick = function (event) {
 // document.querySelector("#btn4").addEventListener("click",function myfunction(){
 //   alert("Added on the cart");
 // });
+
+/***/ }),
+
+/***/ "./resources/js/deleteUser.js":
+/*!************************************!*\
+  !*** ./resources/js/deleteUser.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "deleteUser": () => (/* binding */ deleteUser)
+/* harmony export */ });
+function deleteUser() {
+  if (window.location.pathname == "/admin/users-view") {
+    window.$ondelete = $("#main .row .column .card a.delete");
+    $ondelete.click(function () {
+      var id = $(this).attr("data-id2");
+      var request = {
+        "url": "http://localhost:4050/admin/delete-user/".concat(id),
+        "method": "DELETE"
+      };
+
+      if (confirm("Do you want to delete this user?")) {
+        $.ajax(request).done(function (response) {
+          alert("User info deleted successfully!");
+          location.reload();
+        });
+      }
+    });
+  }
+}
 
 /***/ }),
 
