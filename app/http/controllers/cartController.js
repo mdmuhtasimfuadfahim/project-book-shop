@@ -27,7 +27,7 @@ function cartController(){
             cart.totalBooks = cart.totalBooks + 1
             cart.totalPrice = cart.totalPrice + req.body.price
         } else{
-            cart.books[req.body._id].qty = cart.books[req.body._id].qty + 1
+            cart.books[req.body._id].bookqty = cart.books[req.body._id].bookqty + 1
 
             /*---------cart total---------*/ 
             cart.totalBooks = cart.totalBooks + 1
