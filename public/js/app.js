@@ -2479,6 +2479,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _stripe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stripe */ "./resources/js/stripe.js");
 /* harmony import */ var _admin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin */ "./resources/js/admin.js");
 /* harmony import */ var _deleteUser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./deleteUser */ "./resources/js/deleteUser.js");
+/* harmony import */ var _messageController__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./messageController */ "./resources/js/messageController.js");
+
 
 
 
@@ -2519,14 +2521,17 @@ if (searchForm) {
   document.querySelector('#search-btn').onclick = function () {
     searchForm.classList.toggle('active');
   };
-} // let loginForm = document.querySelector('.login-form-container');
+}
+/*-------------message controller file-----------*/
+
+
+(0,_messageController__WEBPACK_IMPORTED_MODULE_4__.messageController)(); // let loginForm = document.querySelector('.login-form-container');
 // document.querySelector('#login-btn').onclick = () =>{
 //   loginForm.classList.toggle('active');
 // }
 // document.querySelector('#close-login-btn').onclick = () =>{
 //   loginForm.classList.remove('active');
 // }
-
 
 window.onscroll = function () {
   searchForm.classList.remove('active');
@@ -2710,6 +2715,74 @@ function deleteUser() {
         });
       }
     });
+  }
+}
+
+/***/ }),
+
+/***/ "./resources/js/messageController.js":
+/*!*******************************************!*\
+  !*** ./resources/js/messageController.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "messageController": () => (/* binding */ messageController)
+/* harmony export */ });
+function messageController() {
+  var socket = io();
+  console.log(name);
+  var textarea = document.querySelector('#textarea');
+  var messageArea = document.querySelector('.message__area');
+  var name; // if(window.location.pathname === '/customer/message' || window.location.pathname === '/admin/view-messages'){
+  //     do {
+  //         name = prompt('Please enter your name: ')
+  //     } while(!name)
+  // }
+
+  if (!textarea) {
+    return;
+  }
+
+  textarea.addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') {
+      sendMessage(e.target.value);
+    }
+  });
+
+  function sendMessage(message) {
+    var getH4Class = document.querySelector('.give_data');
+    var msg = {
+      user: getH4Class.dataset.username,
+      message: message.trim()
+    }; // Append 
+
+    appendMessage(msg, 'outgoing');
+    textarea.value = '';
+    scrollToBottom(); // Send to server 
+
+    socket.emit('message', msg);
+  }
+
+  function appendMessage(msg, type) {
+    var mainDiv = document.createElement('div');
+    var className = type;
+    mainDiv.classList.add(className, 'message');
+    var markup = "\n        <h4>".concat(msg.user, "</h4>\n        <p>").concat(msg.message, "</p>\n    ");
+    mainDiv.innerHTML = markup;
+    messageArea.appendChild(mainDiv);
+  } // Recieve messages 
+
+
+  socket.on('message', function (msg) {
+    appendMessage(msg, 'incoming');
+    scrollToBottom();
+  });
+
+  function scrollToBottom() {
+    messageArea.scrollTop = messageArea.scrollHeight;
   }
 }
 

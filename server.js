@@ -92,8 +92,13 @@ io.on('connection', (socket)=>{
         // console.log(orderId)
         socket.join(orderId)
     })
+    socket.on('message', (msg) => {
+        socket.broadcast.emit('message', msg)
+    })
 })
 
 eventEmitter.on('orderPlaced', (data)=>{
     io.to('adminRoom').emit('orderPlaced', data)
 })
+
+

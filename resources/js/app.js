@@ -2,6 +2,7 @@ import { initAddToOrder } from './addToCart';
 import { initStripe } from './stripe';
 import { initAdmin } from './admin';
 import { deleteUser } from './deleteUser';
+import { messageController } from './messageController';
 
 
 /*---------add to cart operation file--------*/ 
@@ -41,6 +42,9 @@ if(searchForm){
   }
   
 }
+
+/*-------------message controller file-----------*/
+messageController() 
 
 // let loginForm = document.querySelector('.login-form-container');
 

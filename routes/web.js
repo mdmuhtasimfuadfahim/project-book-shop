@@ -34,11 +34,13 @@ function initRoutes(app){
     app.get('/admin/view-all-books', admin, adminController().viewAllBooks)
     app.get('/admin/view-all-blogs', admin, adminController().viewAllBlogs)
     app.post('/admin/add-blogs', adminController().addBlog)
+    app.get('/admin/view-messages', admin, adminController().viewMessagePage)
 
     /*------cusstomer APIs-----*/ 
     app.post('/orders', customerController().orderedBooks)
     app.get('/customer/orders', customerController().ordersPage)
     app.post('/update-cart', cartController().updateCart)
+    app.get('/customer/message', customerController().messagePage)
 }
 
 

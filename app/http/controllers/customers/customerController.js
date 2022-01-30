@@ -70,6 +70,9 @@ function customerController(){
             }).catch(err =>{
                 return res.status(500).json({ message: 'Something went wrong'});
             })
+        },
+        messagePage(req, res){
+            res.render('customerview/message', {username: req.user.name})
         }
     }
 }

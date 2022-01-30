@@ -1,0 +1,20 @@
+<%- include('./dashboard.ejs') %>
+
+<div id="main" >
+    <%- include('./head.ejs') %>
+<section class="chat__section">
+    <div class="brand">
+        <img src="/img/wassup.png" alt="">
+        <h1>Give Your Message Here:</h1>
+    </div>
+     <div class="message__area">
+         <h4 class="give_data" data-username="<%= username %>"></h4>
+     </div>
+    <div>
+        <textarea id="textarea" cols="30" rows="1" placeholder="Write a message..."></textarea>
+    </div>
+</section>
+</div>
+
+
+<script src="/socket.io/socket.io.js"></script>

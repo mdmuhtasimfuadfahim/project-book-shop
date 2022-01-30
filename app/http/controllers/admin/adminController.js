@@ -40,12 +40,12 @@ function adminController(){
         },
         async customerCompletedOrders(req, res){
             const orders = await Orders.find({ status: { $ne: 'order_placed' }}, null, { sort: { 'createdAt': -1 }}).populate('customerId', '-password')
-            console.log(orders)
+            // console.log(orders)
             return res.render('adminview/completedOrders', {orders: orders, moment: moment})
         },
         async viewUsers(req, res){
             const users = await Users.find()
-            console.log(users)
+            // console.log(users)
             res.render('adminview/users', {users: users, moment: moment})
         },
         deleteUser(req, res){
@@ -202,6 +202,10 @@ function adminController(){
         async viewAllBlogs(req, res){
             const blogs = await Blogs.find()
             res.render('adminview/viewBlogs', {blogs: blogs, moment: moment})
+        },
+        viewMessagePage(req, res){
+            // console.log(req.user.name)
+            res.render('adminview/message', {username: req.user.name})
         }
     }
 }

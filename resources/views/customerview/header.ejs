@@ -13,10 +13,11 @@
 
         <div class="icons">
             <div id="search-btn" class="fas fa-search"></div>
-            <a href="#" class="fas fa-heart"></a>
             <a href="#" class="fas fa-bell"></a>
             <% if(user) { %>
                <% if(user.role === "Customer") { %>
+               <a href="/customer/message" class="fas fa-sms"></a>
+
                <a href="/customer/orders" class="fas fa-sort"></a>
                <form id="logout" action="/logout" method="POST">
                   <a class="fas fa-sign-out-alt" onclick="document.getElementById('logout').submit()" href="#"></a>
