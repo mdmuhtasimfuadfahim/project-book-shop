@@ -5,16 +5,16 @@ export function initAddToOrder(){
     let addToCart = document.querySelectorAll('.add-to-cart')
     let cartCounter = document.querySelector('#top2')
 
-function updateCart(books){
-  axios.post('/update-cart', books).then(res =>{
+function updateCart(book){
+  axios.post('/update-cart', book).then(res =>{
     // console.log(res)
     cartCounter.innerText = res.data.totalBooks
-    new Noty({
-        type: 'success',
-        timeout: 1000,
-        text: 'A book added to cart',
-        progressBar: false
-    }).show();
+    // new Noty({
+    //     type: 'error',
+    //     timeout: 1000,
+    //     text: 'A book added to cart',
+    //     progressBar: true
+    // }).show();
     }).catch(err =>{
     new Noty({
         type: 'error',
@@ -30,8 +30,8 @@ addToCart.forEach((btn)=>{
     return;
   }
   btn.addEventListener('click', (e)=>{
-    let books = JSON.parse(btn.dataset.books)
-    updateCart(books)
+    let book = JSON.parse(btn.dataset.book)
+    updateCart(book)
   })
 })
 }

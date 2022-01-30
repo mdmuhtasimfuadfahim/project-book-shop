@@ -226,7 +226,7 @@
                   <span class="p-price">৳ <%= books.price %> </span>
                   <% if(user) { %>
                      <% if(user.role === "Customer") { %> 
-                      <button data-books="<%= JSON.stringify(books) %>" class="add-to-cart btn">Add to cart</button>
+                      <button data-book="<%= JSON.stringify(books) %>" class="add-to-cart btn">Add to cart</button>
                      <% } else { %>
                       <a type="button" class="btn" href="/admin/dashboard">Dashboard</a>
                       <% } %>
@@ -604,7 +604,7 @@
               </div>
             <% if(user) { %>
               <% if(user.role === "Customer") { %> 
-              <button data-books="<%= JSON.stringify(books) %>" class="add-to-cart btn" id="btn1"> Add to cart</button>
+              <button data-book="<%= JSON.stringify(books) %>" class="add-to-cart btn"> Add to cart</button>
               <% } else { %>
                 <button  class="btn">Dashboard</button>
 
@@ -636,7 +636,7 @@
               </div>
               <% if(user) { %>
               <% if(user.role === "Customer") { %> 
-                 <button data-books="<%= JSON.stringify(books) %>" class="add-to-cart btn" id="btn1"> Add to cart</button>
+                 <button data-book="<%= JSON.stringify(books) %>" class="add-to-cart btn" > Add to cart</button>
                  <% } else { %>
                     <button  class="btn">Dashboard</button>
 
@@ -669,7 +669,7 @@
               </div>
               <% if(user) { %>
                 <% if(user.role === "Customer") { %> 
-                  <button data-books="<%= JSON.stringify(books) %>" class="add-to-cart btn" id="btn1"> Add to cart</button>
+                  <button data-book="<%= JSON.stringify(books) %>" class="add-to-cart btn"> Add to cart</button>
                   <% } else { %>
                     <button  class="btn">Dashboard</button>
 
@@ -701,7 +701,7 @@
               </div>
             <% if(user) { %>
               <% if(user.role === "Customer") { %> 
-              <button data-books="<%= JSON.stringify(books) %>" class="add-to-cart btn" id="btn1"> Add to cart</button>
+              <button data-book="<%= JSON.stringify(books) %>" class="add-to-cart btn" > Add to cart</button>
               <% } else { %>
                 <button  class="btn">Dashboard</button>
 
@@ -776,7 +776,7 @@
                   <div class="price">৳ <%= books.price %><span>৳ <%= books.description %></span></div>
                   <% if(user) { %>
                 <% if(user.role === "Customer") { %> 
-                  <button data-books="<%= JSON.stringify(books) %>" class="btn add-to-cart" id="btn3"> add to cart </button>
+                  <button data-book="<%= JSON.stringify(books) %>" class="btn add-to-cart" > add to cart </button>
                   <% } else { %>
                     <a type="button" class="btn" href="/admin/dashboard">Dashboard</a>
                     <% } %>

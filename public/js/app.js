@@ -2323,16 +2323,15 @@ function initAddToOrder() {
   var addToCart = document.querySelectorAll('.add-to-cart');
   var cartCounter = document.querySelector('#top2');
 
-  function updateCart(books) {
-    axios__WEBPACK_IMPORTED_MODULE_0___default().post('/update-cart', books).then(function (res) {
+  function updateCart(book) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().post('/update-cart', book).then(function (res) {
       // console.log(res)
-      cartCounter.innerText = res.data.totalBooks;
-      new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
-        type: 'success',
-        timeout: 1000,
-        text: 'A book added to cart',
-        progressBar: false
-      }).show();
+      cartCounter.innerText = res.data.totalBooks; // new Noty({
+      //     type: 'error',
+      //     timeout: 1000,
+      //     text: 'A book added to cart',
+      //     progressBar: true
+      // }).show();
     })["catch"](function (err) {
       new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
         type: 'error',
@@ -2349,8 +2348,8 @@ function initAddToOrder() {
     }
 
     btn.addEventListener('click', function (e) {
-      var books = JSON.parse(btn.dataset.books);
-      updateCart(books);
+      var book = JSON.parse(btn.dataset.book);
+      updateCart(book);
     });
   });
 }
